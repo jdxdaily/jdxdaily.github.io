@@ -1,5 +1,7 @@
 /* ---------- JDX site stylesheet ---------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
 :root {
   --navy: #0B2545;
   --navy-2: #13315C;
@@ -13,9 +15,9 @@
   --green: #2A9D8F;
   --red:   #E63946;
   --amber: #D4A634;
-  --serif: Georgia, "Source Serif Pro", "Iowan Old Style", serif;
-  --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, system-ui, sans-serif;
-  --mono:  "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --serif: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+  --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --mono:  "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -27,8 +29,9 @@ html, body {
   color: var(--navy-2);
   font-family: var(--sans);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a { color: var(--navy-soft); text-decoration: none; }
@@ -191,17 +194,19 @@ a:hover { text-decoration: underline; }
 .briefing-header .eyebrow .dot { color: var(--red); margin: 0 6px; }
 .briefing-header h1 {
   font-family: var(--serif);
-  font-size: 38px;
-  line-height: 1.15;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.18;
   color: var(--navy);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   letter-spacing: -0.5px;
 }
 .briefing-header .deck {
-  font-size: 17px;
+  font-size: 18px;
   color: var(--slate);
   max-width: 720px;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-weight: 400;
 }
 .briefing-meta {
   margin-top: 14px;
@@ -254,79 +259,102 @@ a:hover { text-decoration: underline; }
 
 .briefing-content h2 {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 23px;
+  font-weight: 600;
   color: var(--navy);
-  margin: 36px 0 12px;
-  padding-bottom: 6px;
+  margin: 44px 0 14px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--line);
+  letter-spacing: -0.2px;
 }
 .briefing-content h2:first-child { margin-top: 0; }
 .briefing-content h3 {
-  font-family: var(--serif);
-  font-size: 17px;
-  color: var(--navy-2);
-  margin: 24px 0 8px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 28px 0 10px;
 }
 .briefing-content p {
-  margin: 0 0 14px;
-  font-size: 15.5px;
-  line-height: 1.65;
+  margin: 0 0 18px;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #1a2a42;
 }
 .briefing-content ul {
-  padding-left: 22px;
-  margin: 0 0 16px;
+  padding-left: 24px;
+  margin: 0 0 20px;
 }
 .briefing-content li {
-  font-size: 15.5px;
-  line-height: 1.6;
-  margin-bottom: 8px;
+  font-size: 16.5px;
+  line-height: 1.72;
+  margin-bottom: 10px;
+  color: #1a2a42;
 }
-.briefing-content strong { color: var(--navy); }
+.briefing-content strong { color: var(--navy); font-weight: 600; }
+.briefing-content em { color: var(--slate); }
 .briefing-content .ticker {
   font-family: var(--mono);
   font-weight: 600;
   color: var(--navy);
-  font-size: 0.95em;
+  font-size: 0.92em;
+  background: var(--line-soft);
+  padding: 1px 4px;
+  border-radius: 3px;
 }
 .briefing-content .num {
   font-family: var(--mono);
   font-variant-numeric: tabular-nums;
+  font-size: 0.97em;
 }
-.briefing-content .up { color: var(--green); font-weight: 600; }
-.briefing-content .down { color: var(--red); font-weight: 600; }
+.briefing-content .up   { color: var(--green); font-weight: 600; }
+.briefing-content .down { color: var(--red);   font-weight: 600; }
 
 /* ---------- Data tables ---------- */
 table.data {
   width: 100%;
   border-collapse: collapse;
-  margin: 8px 0 20px;
-  font-size: 14px;
+  margin: 10px 0 24px;
+  font-size: 14.5px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
 }
 table.data th {
   background: var(--navy);
   color: white;
-  padding: 8px 12px;
+  padding: 10px 14px;
   text-align: left;
   font-family: var(--sans);
   font-weight: 600;
-  font-size: 12.5px;
-  letter-spacing: 0.3px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 table.data td {
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-bottom: 1px solid var(--line);
   font-family: var(--sans);
+  font-size: 14.5px;
+  line-height: 1.5;
+  vertical-align: top;
 }
+table.data tr:last-child td { border-bottom: none; }
 table.data tr:nth-child(even) td { background: var(--line-soft); }
 table.data td.num, table.data th.num {
   font-family: var(--mono);
   font-variant-numeric: tabular-nums;
   text-align: right;
+  font-size: 14px;
 }
 table.data td.ticker {
   font-family: var(--mono);
   font-weight: 600;
+  font-size: 13.5px;
   color: var(--navy);
+  background: var(--line-soft);
 }
 
 /* ---------- Callouts ---------- */
