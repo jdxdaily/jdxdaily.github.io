@@ -1,16 +1,18 @@
 name: Daily Briefing
 
 on:
-  schedule:
-    # 01:00 UTC = 09:00 HKT
-    - cron: '0 1 * * *'
-  workflow_dispatch: # allow manual runs for testing
+  push:
+    branches: [main]
+    paths:
+      - 'briefings/**'
+      - 'index.html'
+  workflow_dispatch: # allow manual trigger for testing
 
 permissions:
-  contents: write # needed to commit generated briefings back to the repo
+  contents: write
 
 jobs:
-  generate:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,25 +23,26 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Install weasyprint + system dependencies
         run: |
-          pip install anthropic
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            libpango-1.0-0 libpangocairo-1.0-0 \
+            libgdk-pixbuf2.0-0 libcairo2 \
+            fonts-liberation shared-mime-info
+          pip install weasyprint
 
-      - name: Generate briefing
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # TODO: replace this placeholder with the real generation script
-          echo "TODO: generate briefing for $(date -u +'%Y-%m-%d')"
+      - name: Generate PDFs and update archive
+        run: python scripts/update_site.py
 
-      - name: Commit and push new briefing
+      - name: Commit and push changes
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
-            echo "Nothing new to commit."
+            echo "Nothing to commit."
           else
-            git commit -m "chore: daily briefing $(date -u +'%Y-%m-%d')"
+            git commit -m "chore: auto-update PDFs and archive [skip ci]"
             git push
           fi
