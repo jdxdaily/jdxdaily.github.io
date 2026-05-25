@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News Card — Design Prototypes</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  body { background: #F4F5F7; }
+  .proto-wrap { max-width: 1180px; margin: 0 auto; padding: 48px 24px 80px; }
+  .proto-h1 { font-family: var(--sans); font-size: 28px; color: var(--navy); margin: 0 0 8px; letter-spacing: -0.5px; }
+  .proto-sub { font-family: var(--sans); color: var(--slate); margin: 0 0 40px; }
+  .proto-section { margin-bottom: 56px; }
+  .proto-label {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 14px;
+  }
+  .proto-num {
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    background: var(--navy); color: #fff;
+    padding: 3px 9px; border-radius: 4px; letter-spacing: 1px;
+  }
+  .proto-name { font-family: var(--sans); font-size: 18px; color: var(--navy); font-weight: 600; }
+  .proto-desc { font-family: var(--sans); font-size: 14px; color: var(--slate); margin: 0 0 18px; max-width: 720px; line-height: 1.5; }
+  .proto-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* =========================================================
+     OPTION 1 — Magazine: Bold filled badge top-left
+     ========================================================= */
+  .v1.news-card { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: #fff; transition: box-shadow .2s, transform .2s; text-decoration: none; }
+  .v1.news-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,37,69,.14); }
+  .v1 .v1-visual { position: relative; height: 180px; overflow: hidden; }
+  .v1 .v1-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .v1 .v1-badge {
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 10px; border-radius: 4px; color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  }
+  .v1 .v1-badge.bull { background: #2A9D8F; }
+  .v1 .v1-badge.bear { background: #E63946; }
+  .v1 .v1-cat {
+    position: absolute; bottom: 12px; right: 12px; z-index: 2;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px;
+    text-transform: uppercase; color: rgba(255,255,255,.92);
+    background: rgba(0,0,0,.35); backdrop-filter: blur(6px);
+    padding: 3px 9px; border-radius: 4px;
+  }
+  .v1 .v1-body { padding: 18px 20px 16px; }
+  .v1 .v1-body h3 {
+    font-family: var(--serif); font-size: 19px; line-height: 1.32;
+    font-weight: 600; color: var(--navy); margin: 0 0 8px;
+  }
+  .v1 .v1-body p { font-family: var(--sans); font-size: 13.5px; color: var(--slate); line-height: 1.55; margin: 0 0 14px; }
+  .v1 .v1-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .v1 .v1-ticker { font-family: var(--mono); font-size: 10.5px; font-weight: 600; background: var(--line-soft); color: var(--navy); padding: 2px 7px; border-radius: 4px; }
+  .v1 .v1-source { font-family: var(--mono); font-size: 11px; color: var(--slate-light); }
+
+  /* =========================================================
+     OPTION 2 — Minimal: No badge, sentiment as a small dot in body
+     ========================================================= */
+  .v2.news-card { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: #fff; transition: box-shadow .2s, transform .2s; text-decoration: none; }
+  .v2.news-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,37,69,.12); }
+  .v2 .v2-visual { height: 180px; overflow: hidden; position: relative; }
+  .v2 .v2-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .v2 .v2-cat {
+    position: absolute; bottom: 12px; left: 14px;
+    font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.6px;
+    text-transform: uppercase; color: rgba(255,255,255,.85);
+  }
+  .v2 .v2-body { padding: 22px 24px 20px; }
+  .v2 .v2-sent {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--sans); font-size: 11.5px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+  .v2 .v2-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .v2 .v2-sent.bull .v2-dot { background: #2A9D8F; }
+  .v2 .v2-sent.bear .v2-dot { background: #E63946; }
+  .v2 .v2-sent.bull { color: #2A9D8F; }
+  .v2 .v2-sent.bear { color: #E63946; }
+  .v2 .v2-body h3 {
+    font-family: var(--sans); font-size: 20px; line-height: 1.3;
+    font-weight: 600; color: var(--navy); margin: 0 0 10px; letter-spacing: -0.3px;
+  }
+  .v2 .v2-body p { font-family: var(--sans); font-size: 14px; color: var(--slate); line-height: 1.55; margin: 0 0 16px; }
+  .v2 .v2-source { font-family: var(--sans); font-size: 12px; color: var(--slate-light); }
+
+  /* =========================================================
+     OPTION 3 — Side accent: Vertical color stripe on left
+     ========================================================= */
+  .v3.news-card {
+    border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+    background: #fff; transition: box-shadow .2s, transform .2s;
+    text-decoration: none; position: relative; display: flex;
+  }
+  .v3.news-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(11,37,69,.14); }
+  .v3 .v3-stripe { width: 5px; flex-shrink: 0; }
+  .v3.bull .v3-stripe { background: #2A9D8F; }
+  .v3.bear .v3-stripe { background: #E63946; }
+  .v3 .v3-inner { flex: 1; display: flex; flex-direction: column; }
+  .v3 .v3-visual { height: 170px; position: relative; overflow: hidden; }
+  .v3 .v3-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .v3 .v3-cat-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 20px 0; margin-bottom: -2px;
+  }
+  .v3 .v3-cat {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--slate);
+  }
+  .v3 .v3-sent {
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    margin-left: auto;
+  }
+  .v3.bull .v3-sent { color: #2A9D8F; }
+  .v3.bear .v3-sent { color: #E63946; }
+  .v3 .v3-body { padding: 10px 20px 18px; }
+  .v3 .v3-body h3 {
+    font-family: var(--serif); font-size: 18px; line-height: 1.3;
+    font-weight: 600; color: var(--navy); margin: 6px 0 10px;
+  }
+  .v3 .v3-body p { font-family: var(--sans); font-size: 13.5px; color: var(--slate); line-height: 1.55; margin: 0 0 14px; }
+  .v3 .v3-source { font-family: var(--mono); font-size: 11px; color: var(--slate-light); }
+
+  /* =========================================================
+     OPTION 4 — Sticker badge: Bold corner sticker, image-led
+     ========================================================= */
+  .v4.news-card {
+    border-radius: 20px; overflow: hidden; border: 1px solid var(--line);
+    background: #fff; transition: box-shadow .2s, transform .2s;
+    text-decoration: none; position: relative;
+  }
+  .v4.news-card:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(11,37,69,.16); }
+  .v4 .v4-visual { height: 200px; position: relative; overflow: hidden; }
+  .v4 .v4-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .v4 .v4-grad {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, transparent 30%, transparent 60%, rgba(0,0,0,.55) 100%);
+  }
+  .v4 .v4-sticker {
+    position: absolute; top: 14px; left: 14px; z-index: 3;
+    background: #fff;
+    padding: 6px 11px 6px 9px;
+    border-radius: 999px;
+    display: inline-flex; align-items: center; gap: 6px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    font-family: var(--sans); font-size: 11.5px; font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  .v4 .v4-sticker .arr { font-size: 12px; line-height: 1; }
+  .v4 .v4-sticker.bull { color: #1F7A6E; }
+  .v4 .v4-sticker.bear { color: #C42F3B; }
+  .v4 .v4-cat {
+    position: absolute; bottom: 14px; left: 16px; z-index: 3;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: #fff; opacity: .88;
+  }
+  .v4 .v4-body { padding: 18px 22px 18px; }
+  .v4 .v4-body h3 {
+    font-family: var(--serif); font-size: 19px; line-height: 1.32;
+    font-weight: 600; color: var(--navy); margin: 0 0 10px;
+  }
+  .v4 .v4-body p { font-family: var(--sans); font-size: 13.5px; color: var(--slate); line-height: 1.55; margin: 0 0 14px; }
+  .v4 .v4-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+  .v4 .v4-ticker { font-family: var(--mono); font-size: 10.5px; font-weight: 600; background: var(--line-soft); color: var(--navy); padding: 2px 7px; border-radius: 4px; }
+  .v4 .v4-source { font-family: var(--mono); font-size: 11px; color: var(--slate-light); }
+
+  @media (max-width: 720px) {
+    .proto-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="proto-wrap">
+
+  <h1 class="proto-h1">News Card — Design Prototypes</h1>
+  <p class="proto-sub">Four directions. Pick one (or a hybrid) and I'll wire it into the live site.</p>
+
+  <!-- ============================================================ -->
+  <div class="proto-section">
+    <div class="proto-label">
+      <span class="proto-num">OPTION 1</span>
+      <span class="proto-name">Magazine — bold filled badge, top-left</span>
+    </div>
+    <p class="proto-desc">Solid color badge sits on the image's top-left like a magazine cover. Category tucks into bottom-right of the image. Image flows straight into the body with no colored strip. Tickers + source live in a quiet metadata row at the bottom.</p>
+    <div class="proto-grid">
+
+      <a class="v1 news-card" href="#">
+        <div class="v1-visual">
+          <img src="https://images.unsplash.com/photo-1542792884-b6b898d32f9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="">
+          <span class="v1-badge bull">▲ Bullish</span>
+          <span class="v1-cat">Geopolitics</span>
+        </div>
+        <div class="v1-body">
+          <h3>US stock futures jump on hopes of Iran peace deal; oil slides</h3>
+          <p>The potential for an Iran peace deal has led to a surge in US stock futures, as investors become more optimistic about the global economic outlook.</p>
+          <div class="v1-meta">
+            <span></span>
+            <span class="v1-source">Investing.com</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="v1 news-card" href="#">
+        <div class="v1-visual">
+          <img src="https://images.unsplash.com/photo-1760373022692-9f78b8a68a96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="">
+          <span class="v1-badge bear">▼ Bearish</span>
+          <span class="v1-cat">Tech</span>
+        </div>
+        <div class="v1-body">
+          <h3>Nvidia says its forecast for $200 billion CPU market includes China</h3>
+          <p>Nvidia's forecast for the CPU market, which includes China, has significant implications for the company's growth prospects and the broader tech industry.</p>
+          <div class="v1-meta">
+            <span class="v1-ticker">NVDA</span>
+            <span class="v1-source">Investing.com</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="proto-section">
+    <div class="proto-label">
+      <span class="proto-num">OPTION 2</span>
+      <span class="proto-name">Minimal — Apple News style, sentiment as a tiny dot</span>
+    </div>
+    <p class="proto-desc">No badges on the image at all. Inside the body, sentiment is just a small colored dot + uppercase label, treated as quiet metadata. Headline is sans-serif and slightly larger. Maximum whitespace, very clean.</p>
+    <div class="proto-grid">
+
+      <a class="v2 news-card" href="#">
+        <div class="v2-visual">
+          <img src="https://images.unsplash.com/photo-1542792884-b6b898d32f9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="">
+          <span class="v2-cat">Geopolitics</span>
+        </div>
+        <div class="v2-body">
+          <span class="v2-sent bull"><span class="v2-dot"></span> Bullish</span>
+          <h3>US stock futures jump on hopes of Iran peace deal; oil slides</h3>
+          <p>The potential for an Iran peace deal has led to a surge in US stock futures, as investors become more optimistic about the global economic outlook.</p>
+          <span class="v2-source">Investing.com</span>
+        </div>
+      </a>
+
+      <a class="v2 news-card" href="#">
+        <div class="v2-visual">
+          <img src="https://images.unsplash.com/photo-1760373022692-9f78b8a68a96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="">
+          <span class="v2-cat">Tech</span>
+        </div>
+        <div class="v2-body">
+          <span class="v2-sent bear"><span class="v2-dot"></span> Bearish</span>
+          <h3>Nvidia says its forecast for $200 billion CPU market includes China</h3>
+          <p>Nvidia's forecast for the CPU market, which includes China, has significant implications for the company's growth prospects and the broader tech industry.</p>
+          <span class="v2-source">Investing.com · NVDA</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="proto-section">
+    <div class="proto-label">
+      <span class="proto-num">OPTION 3</span>
+      <span class="proto-name">Side accent — vertical color stripe on the left</span>
+    </div>
+    <p class="proto-desc">A thin vertical color bar runs the full height of the card on the left edge. Hint of color without competing with the image. Category and sentiment sit in a small row above the headline.</p>
+    <div class="proto-grid">
+
+      <a class="v3 news-card bull" href="#">
+        <span class="v3-stripe"></span>
+        <div class="v3-inner">
+          <div class="v3-visual"><img src="https://images.unsplash.com/photo-1542792884-b6b898d32f9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt=""></div>
+          <div class="v3-cat-row">
+            <span class="v3-cat">Geopolitics</span>
+            <span class="v3-sent">▲ Bullish</span>
+          </div>
+          <div class="v3-body">
+            <h3>US stock futures jump on hopes of Iran peace deal; oil slides</h3>
+            <p>The potential for an Iran peace deal has led to a surge in US stock futures, as investors become more optimistic about the global economic outlook.</p>
+            <span class="v3-source">Investing.com</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="v3 news-card bear" href="#">
+        <span class="v3-stripe"></span>
+        <div class="v3-inner">
+          <div class="v3-visual"><img src="https://images.unsplash.com/photo-1760373022692-9f78b8a68a96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt=""></div>
+          <div class="v3-cat-row">
+            <span class="v3-cat">Tech · NVDA</span>
+            <span class="v3-sent">▼ Bearish</span>
+          </div>
+          <div class="v3-body">
+            <h3>Nvidia says its forecast for $200 billion CPU market includes China</h3>
+            <p>Nvidia's forecast for the CPU market, which includes China, has significant implications for the company's growth prospects and the broader tech industry.</p>
+            <span class="v3-source">Investing.com</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="proto-section">
+    <div class="proto-label">
+      <span class="proto-num">OPTION 4</span>
+      <span class="proto-name">Sticker — white pill badge, premium &amp; tactile</span>
+    </div>
+    <p class="proto-desc">Badge is a white rounded pill with a colored arrow + label, floating over the image with a soft shadow — like an Apple News editorial sticker. Image gets a subtle dark gradient overlay so the white text/badge reads cleanly. Source + ticker row separated by a hairline.</p>
+    <div class="proto-grid">
+
+      <a class="v4 news-card" href="#">
+        <div class="v4-visual">
+          <img src="https://images.unsplash.com/photo-1542792884-b6b898d32f9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="">
+          <div class="v4-grad"></div>
+          <span class="v4-sticker bull"><span class="arr">▲</span> Bullish</span>
+          <span class="v4-cat">Geopolitics</span>
+        </div>
+        <div class="v4-body">
+          <h3>US stock futures jump on hopes of Iran peace deal; oil slides</h3>
+          <p>The potential for an Iran peace deal has led to a surge in US stock futures, as investors become more optimistic about the global economic outlook.</p>
+          <div class="v4-meta">
+            <span></span>
+            <span class="v4-source">Investing.com</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="v4 news-card" href="#">
+        <div class="v4-visual">
+          <img src="https://images.unsplash.com/photo-1760373022692-9f78b8a68a96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=900" alt="">
+          <div class="v4-grad"></div>
+          <span class="v4-sticker bear"><span class="arr">▼</span> Bearish</span>
+          <span class="v4-cat">Tech</span>
+        </div>
+        <div class="v4-body">
+          <h3>Nvidia says its forecast for $200 billion CPU market includes China</h3>
+          <p>Nvidia's forecast for the CPU market, which includes China, has significant implications for the company's growth prospects and the broader tech industry.</p>
+          <div class="v4-meta">
+            <span class="v4-ticker">NVDA</span>
+            <span class="v4-source">Investing.com</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

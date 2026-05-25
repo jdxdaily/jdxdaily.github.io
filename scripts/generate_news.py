@@ -213,7 +213,7 @@ _CATEGORY_CLASS = {
 
 
 def _sentiment_label(s: str) -> str:
-    return "▲ BULLISH" if s == "bullish" else "▼ BEARISH"
+    return "▲ Bullish" if s == "bullish" else "▼ Bearish"
 
 
 def _card_html(item: dict) -> str:
@@ -235,27 +235,27 @@ def _card_html(item: dict) -> str:
     else:
         img_tag = ""
 
+    # Sentiment sticker + category sit inside the visual (overlaid on the image)
     visual = (
         f'<div class="news-card-visual {vis_class}">\n'
         f'      {img_tag}\n'
-        f'      <div class="news-card-visual-overlay">'
-        f'<span class="news-visual-cat">{h.escape(category.upper())}</span></div>\n'
+        f'      <div class="news-card-visual-grad"></div>\n'
+        f'      <span class="news-sentiment {sentiment}">{_sentiment_label(sentiment)}</span>\n'
+        f'      <span class="news-visual-cat">{h.escape(category.upper())}</span>\n'
         f'    </div>'
     )
 
     chips = "".join(f'<span class="news-ticker-chip">{t}</span>' for t in tickers[:5])
-    tickers_html = f'<div class="news-tickers">{chips}</div>' if chips else ""
+    tickers_html = f'<div class="news-tickers">{chips}</div>' if chips else '<span></span>'
 
     return (
         f'<a class="news-card {sentiment}" href="{h.escape(url)}" target="_blank" rel="noopener">\n'
         f'    {visual}\n'
         f'    <div class="news-card-body">\n'
-        f'      <div class="news-card-top">'
-        f'<span class="news-sentiment {sentiment}">{_sentiment_label(sentiment)}</span></div>\n'
         f'      <h3>{h.escape(headline)}</h3>\n'
         f'      <p>{h.escape(summary)}</p>\n'
-        f'      {tickers_html}\n'
-        f'      <div class="news-source">{h.escape(source)}</div>\n'
+        f'      <div class="news-card-meta">{tickers_html}'
+        f'<span class="news-source">{h.escape(source)}</span></div>\n'
         f'    </div>\n'
         f'  </a>'
     )
