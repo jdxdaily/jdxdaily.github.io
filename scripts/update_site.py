@@ -102,7 +102,7 @@ def generate_pdfs(date_dir: Path) -> bool:
 # archive.html update
 # ---------------------------------------------------------------------------
 
-ARCHIVE_MARKER = "<!-- Future briefings will be inserted above this comment by the daily generator -->"
+ARCHIVE_MARKER = "<!-- Future briefings will be inserted below this comment by the daily generator -->"
 
 
 def update_archive(date_str: str, headline: str) -> bool:
@@ -123,8 +123,10 @@ def update_archive(date_str: str, headline: str) -> bool:
             f'class="pulse-link">Market Pulse</a>\n'
         )
 
+    # Insert new entry directly AFTER the marker so newest appears on top
     new_entry = (
-        f'\n  <div class="archive-item">\n'
+        f'{ARCHIVE_MARKER}\n\n'
+        f'  <div class="archive-item">\n'
         f'    <div class="date">{display_date(date_str)}</div>\n'
         f'    <div class="title">{escaped}</div>\n'
         f'    <div class="links">\n'
@@ -133,7 +135,7 @@ def update_archive(date_str: str, headline: str) -> bool:
         f'      <a href="briefings/{date_str}/in-depth.html">In-depth</a>\n'
         f'{news_link}'
         f'    </div>\n'
-        f'  </div>\n\n  {ARCHIVE_MARKER}'
+        f'  </div>'
     )
 
     updated = content.replace(ARCHIVE_MARKER, new_entry, 1)
