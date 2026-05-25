@@ -892,31 +892,32 @@ table.data td.ticker {
 
 /* =========================================================
    Text size scale
-   [data-size="sm"] / "md" (default) / "lg"
+   sm ≈ 0.88×, md = default (no overrides), lg ≈ 1.15×
+   Defaults shown in comments for reference.
    ========================================================= */
-[data-size="sm"] body              { font-size: 15px; }
-[data-size="sm"] .hero h1          { font-size: 32px; }
-[data-size="sm"] .hero .lede       { font-size: 16px; }
-[data-size="sm"] .briefing-header h1   { font-size: 28px; }
-[data-size="sm"] .briefing-content h2  { font-size: 22px; }
-[data-size="sm"] .briefing-content h3  { font-size: 17px; }
+[data-size="sm"] body                  { font-size: 14px;   }  /* 16  */
+[data-size="sm"] .hero h1              { font-size: 43px;   }  /* 49  */
+[data-size="sm"] .hero .lede           { font-size: 17px;   }  /* 19  */
+[data-size="sm"] .briefing-header h1   { font-size: 35px;   }  /* 40  */
+[data-size="sm"] .briefing-content h2  { font-size: 20px;   }  /* 23  */
+[data-size="sm"] .briefing-content h3  { font-size: 13.5px; }  /* 15  */
 [data-size="sm"] .briefing-content p,
-[data-size="sm"] .briefing-content li  { font-size: 15.5px; }
-[data-size="sm"] .news-card h3     { font-size: 16.5px; }
-[data-size="sm"] .news-card p      { font-size: 13px; }
-[data-size="sm"] .news-hero h1     { font-size: 28px; }
+[data-size="sm"] .briefing-content li  { font-size: 14.5px; }  /* 16.5 */
+[data-size="sm"] .news-card h3         { font-size: 16px;   }  /* 18  */
+[data-size="sm"] .news-card p          { font-size: 12px;   }  /* 13.5 */
+[data-size="sm"] .news-hero h1         { font-size: 32px;   }  /* 36  */
 
-[data-size="lg"] body              { font-size: 17.5px; }
-[data-size="lg"] .hero h1          { font-size: 44px; }
-[data-size="lg"] .hero .lede       { font-size: 20px; }
-[data-size="lg"] .briefing-header h1   { font-size: 38px; }
-[data-size="lg"] .briefing-content h2  { font-size: 28px; }
-[data-size="lg"] .briefing-content h3  { font-size: 21px; }
+[data-size="lg"] body                  { font-size: 18.5px; }  /* 16  */
+[data-size="lg"] .hero h1              { font-size: 56px;   }  /* 49  */
+[data-size="lg"] .hero .lede           { font-size: 22px;   }  /* 19  */
+[data-size="lg"] .briefing-header h1   { font-size: 46px;   }  /* 40  */
+[data-size="lg"] .briefing-content h2  { font-size: 27px;   }  /* 23  */
+[data-size="lg"] .briefing-content h3  { font-size: 17px;   }  /* 15  */
 [data-size="lg"] .briefing-content p,
-[data-size="lg"] .briefing-content li  { font-size: 18.5px; }
-[data-size="lg"] .news-card h3     { font-size: 20px; }
-[data-size="lg"] .news-card p      { font-size: 15px; }
-[data-size="lg"] .news-hero h1     { font-size: 40px; }
+[data-size="lg"] .briefing-content li  { font-size: 19px;   }  /* 16.5 */
+[data-size="lg"] .news-card h3         { font-size: 21px;   }  /* 18  */
+[data-size="lg"] .news-card p          { font-size: 15.5px; }  /* 13.5 */
+[data-size="lg"] .news-hero h1         { font-size: 42px;   }  /* 36  */
 
 /* =========================================================
    Settings panel — gear icon in nav, dropdown panel
