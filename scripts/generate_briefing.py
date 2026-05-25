@@ -325,6 +325,7 @@ Use this HTML skeleton — fill in every [PLACEHOLDER]:
   </div>
 </footer>
 
+<script src="../../assets/reveal.js" defer></script>
 </body>
 </html>
 """
@@ -485,6 +486,7 @@ def rebuild_index(date_str: str, standard_html: str) -> None:
   </div>
 </footer>
 
+<script src="assets/reveal.js" defer></script>
 </body>
 </html>
 """

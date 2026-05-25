@@ -310,6 +310,7 @@ def build_news_page(items: list[dict], date_str: str, prefix: str = "") -> str:
   </div>
 </footer>
 
+<script src="{prefix}assets/reveal.js" defer></script>
 </body>
 </html>
 """
