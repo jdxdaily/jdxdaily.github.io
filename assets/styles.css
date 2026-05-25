@@ -76,7 +76,7 @@ a:hover { text-decoration: underline; }
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
-.site-nav { display: flex; gap: 22px; font-size: 14px; }
+.site-nav { display: flex; align-items: center; gap: 22px; font-size: 14px; }
 .site-nav a {
   color: var(--navy-2);
   font-weight: 500;
@@ -925,15 +925,15 @@ table.data td.ticker {
 
 .settings-btn {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 32px; height: 32px;
-  padding: 0; margin-left: 8px;
+  width: 28px; height: 28px;
+  padding: 0; margin: 0;
   background: none; border: none; cursor: pointer;
   color: var(--slate);
-  border-radius: 8px;
+  border-radius: 7px;
   transition: background 0.15s ease, color 0.15s ease;
 }
 .settings-btn:hover { background: var(--line-soft); color: var(--navy); }
-.settings-btn svg { width: 18px; height: 18px; display: block; }
+.settings-btn svg { width: 16px; height: 16px; display: block; }
 
 .settings-panel {
   position: absolute;
