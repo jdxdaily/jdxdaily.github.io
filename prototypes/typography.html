@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typography — Design Prototypes</title>
+<style>
+  :root {
+    --navy: #0B2545;
+    --navy-2: #13315C;
+    --slate: #5C677D;
+    --slate-light: #8DA2C0;
+    --line: #E5E9F0;
+    --bg: #FAFAF7;
+
+    /* Three font systems being compared */
+    --apple-sans:   -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+    --apple-serif:  ui-serif, "New York", "Iowan Old Style", "Source Serif 4", Georgia, serif;
+    --apple-mono:   ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+    --current-serif: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+    --current-mono:  "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--navy-2);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+  .intro h1 { font-family: var(--apple-sans); font-size: 30px; margin: 0 0 8px; color: var(--navy); letter-spacing: -0.6px; }
+  .intro p { font-family: var(--apple-sans); color: var(--slate); margin: 0 0 36px; max-width: 600px; line-height: 1.5; }
+
+  /* Each sample card */
+  .sample {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+  }
+  .sample-label {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 22px;
+  }
+  .sample-num {
+    font-family: var(--apple-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    background: var(--navy);
+    color: #fff;
+    padding: 4px 9px;
+    border-radius: 4px;
+  }
+  .sample-name {
+    font-family: var(--apple-sans);
+    font-size: 14px;
+    color: var(--slate);
+    font-weight: 600;
+  }
+
+  /* Shared sample content – we'll override fonts per option */
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--slate); margin-bottom: 10px; }
+  .h1 { font-size: 32px; line-height: 1.18; letter-spacing: -0.6px; color: var(--navy); margin: 0 0 14px; font-weight: 700; }
+  .lede { font-size: 16px; line-height: 1.55; color: var(--slate); margin: 0 0 24px; }
+  .h2 { font-size: 22px; line-height: 1.25; color: var(--navy); margin: 24px 0 10px; font-weight: 600; letter-spacing: -0.3px; }
+  .body { font-size: 15px; line-height: 1.65; color: var(--navy-2); margin: 0 0 12px; }
+  .ticker { font-size: 12px; font-weight: 600; background: #F0F3F8; color: var(--navy); padding: 2px 7px; border-radius: 4px; letter-spacing: 0.3px; }
+  .data { width: 100%; border-collapse: collapse; margin: 14px 0 4px; font-size: 13.5px; }
+  .data th, .data td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+  .data th { font-weight: 600; color: var(--slate); }
+
+  /* ============================================================
+     OPTION 1 — Apple Pure: SF Pro for everything
+     ============================================================ */
+  .pure .eyebrow,
+  .pure .h1,
+  .pure .lede,
+  .pure .h2,
+  .pure .body,
+  .pure .data { font-family: var(--apple-sans); }
+  .pure .ticker { font-family: var(--apple-mono); }
+  .pure .data th { font-family: var(--apple-mono); font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; }
+
+  /* ============================================================
+     OPTION 2 — Apple Editorial: SF Pro body + New York headings
+     ============================================================ */
+  .editorial .eyebrow { font-family: var(--apple-sans); }
+  .editorial .h1,
+  .editorial .h2     { font-family: var(--apple-serif); }
+  .editorial .lede,
+  .editorial .body,
+  .editorial .data   { font-family: var(--apple-sans); }
+  .editorial .ticker { font-family: var(--apple-mono); }
+  .editorial .data th { font-family: var(--apple-mono); font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; }
+  /* New York looks best at slightly different weights */
+  .editorial .h1 { font-weight: 700; letter-spacing: -0.3px; }
+  .editorial .h2 { font-weight: 600; }
+
+  /* ============================================================
+     OPTION 3 — Refined Current: keep Source Serif, swap mono
+     ============================================================ */
+  .refined .eyebrow { font-family: var(--apple-mono); }
+  .refined .h1,
+  .refined .h2     { font-family: var(--current-serif); }
+  .refined .lede,
+  .refined .body,
+  .refined .data   { font-family: var(--apple-sans); }
+  .refined .ticker { font-family: var(--apple-mono); }
+  .refined .data th { font-family: var(--apple-mono); font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="intro">
+    <h1>Typography — three directions</h1>
+    <p>Each card shows the same hero + briefing snippet rendered in a different font system, so you can compare them on real content.</p>
+  </div>
+
+  <!-- =========================================================== -->
+  <div class="sample pure">
+    <div class="sample-label">
+      <span class="sample-num">Option 1</span>
+      <span class="sample-name">Apple Pure — SF Pro for everything</span>
+    </div>
+    <div class="eyebrow">MONDAY · 25 MAY 2026 · 09:00 SGT</div>
+    <h1 class="h1">US Markets Extend Gains as Tech and Financials Lead the Charge</h1>
+    <p class="lede">The US market extended its gains from the previous session, with the S&amp;P 500 rising +0.37% to 7,473.47 and the Nasdaq 100 increasing +0.42% to 29,481.64.</p>
+    <h2 class="h2">US Session Recap</h2>
+    <p class="body">Gains were led by the technology and financial sectors, with <span class="ticker">XLK</span> and <span class="ticker">XLF</span> rising +1.00% and +0.41% respectively. Below the surface, the VIX fell -0.36% to 16.70, indicating a decrease in market volatility heading into Tuesday's pre-market session.</p>
+    <table class="data">
+      <thead><tr><th>Index</th><th>Close</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>S&amp;P 500</td><td>7,473.47</td><td>+0.37%</td></tr>
+        <tr><td>Nasdaq 100</td><td>29,481.64</td><td>+0.42%</td></tr>
+        <tr><td>Dow Jones</td><td>43,512.81</td><td>+0.58%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- =========================================================== -->
+  <div class="sample editorial">
+    <div class="sample-label">
+      <span class="sample-num">Option 2</span>
+      <span class="sample-name">Apple Editorial — SF Pro body + New York headings (Recommended)</span>
+    </div>
+    <div class="eyebrow">MONDAY · 25 MAY 2026 · 09:00 SGT</div>
+    <h1 class="h1">US Markets Extend Gains as Tech and Financials Lead the Charge</h1>
+    <p class="lede">The US market extended its gains from the previous session, with the S&amp;P 500 rising +0.37% to 7,473.47 and the Nasdaq 100 increasing +0.42% to 29,481.64.</p>
+    <h2 class="h2">US Session Recap</h2>
+    <p class="body">Gains were led by the technology and financial sectors, with <span class="ticker">XLK</span> and <span class="ticker">XLF</span> rising +1.00% and +0.41% respectively. Below the surface, the VIX fell -0.36% to 16.70, indicating a decrease in market volatility heading into Tuesday's pre-market session.</p>
+    <table class="data">
+      <thead><tr><th>Index</th><th>Close</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>S&amp;P 500</td><td>7,473.47</td><td>+0.37%</td></tr>
+        <tr><td>Nasdaq 100</td><td>29,481.64</td><td>+0.42%</td></tr>
+        <tr><td>Dow Jones</td><td>43,512.81</td><td>+0.58%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- =========================================================== -->
+  <div class="sample refined">
+    <div class="sample-label">
+      <span class="sample-num">Option 3</span>
+      <span class="sample-name">Refined Current — keep Source Serif headings, modernize the rest</span>
+    </div>
+    <div class="eyebrow">MONDAY · 25 MAY 2026 · 09:00 SGT</div>
+    <h1 class="h1">US Markets Extend Gains as Tech and Financials Lead the Charge</h1>
+    <p class="lede">The US market extended its gains from the previous session, with the S&amp;P 500 rising +0.37% to 7,473.47 and the Nasdaq 100 increasing +0.42% to 29,481.64.</p>
+    <h2 class="h2">US Session Recap</h2>
+    <p class="body">Gains were led by the technology and financial sectors, with <span class="ticker">XLK</span> and <span class="ticker">XLF</span> rising +1.00% and +0.41% respectively. Below the surface, the VIX fell -0.36% to 16.70, indicating a decrease in market volatility heading into Tuesday's pre-market session.</p>
+    <table class="data">
+      <thead><tr><th>Index</th><th>Close</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td>S&amp;P 500</td><td>7,473.47</td><td>+0.37%</td></tr>
+        <tr><td>Nasdaq 100</td><td>29,481.64</td><td>+0.42%</td></tr>
+        <tr><td>Dow Jones</td><td>43,512.81</td><td>+0.58%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</body>
+</html>

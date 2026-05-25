@@ -1,6 +1,8 @@
 /* ---------- JDX site stylesheet ---------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap');
+/* Inter is loaded as a cross-platform fallback so non-Apple devices
+   (and the Linux PDF runner) get something visually close to SF Pro. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --navy: #0B2545;
@@ -15,9 +17,11 @@
   --green: #2A9D8F;
   --red:   #E63946;
   --amber: #D4A634;
-  --serif: "Source Serif 4", Georgia, "Iowan Old Style", serif;
-  --sans:  -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Inter", "Helvetica Neue", "Segoe UI", Roboto, system-ui, sans-serif;
-  --mono:  "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+  /* Apple Pure: SF Pro everywhere via the system font stack.
+     --serif aliases --sans so existing serif usages get SF Pro too. */
+  --sans:  -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --serif: var(--sans);
+  --mono:  ui-monospace, "SF Mono", Menlo, "Cascadia Mono", Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
