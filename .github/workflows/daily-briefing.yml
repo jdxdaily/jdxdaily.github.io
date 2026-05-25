@@ -2,9 +2,9 @@ name: Daily Briefing
 
 on:
   schedule:
-    # 01:00 UTC = 09:00 SGT/HKT, Tue–Sat only
-    # (skips Sun + Mon since those reflect weekend market data)
-    - cron: '0 1 * * 2-6'
+    # 01:00 UTC = 09:00 SGT/HKT, every day
+    # (news + briefing run daily; stocks step skips Sun + Mon)
+    - cron: '0 1 * * *'
   workflow_dispatch: # allow manual trigger for testing (also used by cron-job.org)
 
 permissions:
@@ -45,7 +45,14 @@ jobs:
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
         run: python scripts/generate_news.py
 
+      - name: Check day of week (UTC)
+        id: dow
+        # %u: 1=Mon ... 7=Sun. At 01:00 UTC this matches SGT day-of-week.
+        run: echo "day=$(date -u +%u)" >> "$GITHUB_OUTPUT"
+
       - name: Generate stock watchlist data
+        # Skip Sun (7) and Mon (1) — markets were closed Sat/Sun, no new data
+        if: steps.dow.outputs.day != '7' && steps.dow.outputs.day != '1'
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python scripts/generate_stocks.py
