@@ -186,6 +186,21 @@ def main():
     else:
         print(f"  standard.html not found for {latest} — skipping archive update")
 
+    # Inject SEO meta tags + JSON-LD onto any new briefings/news (idempotent)
+    print("\nInjecting SEO meta on new pages…", flush=True)
+    import subprocess
+    subprocess.run(
+        ["python3", str(ROOT / "scripts" / "inject_seo_meta.py"), str(ROOT)],
+        check=False,
+    )
+
+    # Regenerate sitemap.xml so search engines see the latest URLs
+    print("\nRegenerating sitemap…", flush=True)
+    subprocess.run(
+        ["python3", str(ROOT / "scripts" / "generate_sitemap.py")],
+        check=False,
+    )
+
     if not changed:
         print("\nNothing changed.")
 
