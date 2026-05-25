@@ -272,6 +272,7 @@ def build_news_page(items: list[dict], date_str: str, prefix: str = "") -> str:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Market Pulse — JDX · {display}</title>
+<meta name="google-site-verification" content="r7NrGCwzFJohJsi-Ga63T69IDe_d3pubqsh8h04lUX4">
 <link rel="stylesheet" href="{prefix}assets/styles.css">
 <script>(function(){{var d=document.documentElement;try{{d.setAttribute("data-theme",localStorage.getItem("jdx-theme")||"auto");d.setAttribute("data-size",localStorage.getItem("jdx-size")||"md");}}catch(e){{d.setAttribute("data-theme","auto");d.setAttribute("data-size","md");}}}})();</script>
 </head>
