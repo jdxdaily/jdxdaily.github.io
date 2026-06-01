@@ -97,6 +97,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://jdxdaily.github.io/news/2026-06-02.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://jdxdaily.github.io/briefings/2026-05-21/concise.html</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>never</changefreq>
@@ -308,6 +314,24 @@
   </url>
   <url>
     <loc>https://jdxdaily.github.io/briefings/2026-06-01/in-depth.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jdxdaily.github.io/briefings/2026-06-02/concise.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jdxdaily.github.io/briefings/2026-06-02/standard.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jdxdaily.github.io/briefings/2026-06-02/in-depth.html</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
