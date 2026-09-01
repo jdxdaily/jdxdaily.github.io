@@ -18,6 +18,29 @@ from pathlib import Path
 # on 2026-08-16; gpt-oss-120b is the drop-in production replacement.
 GROQ_MODEL = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
 
+def call_with_retry(client, *, messages, max_tokens, temperature, attempts: int = 3):
+    """Groq's free tier allows 8,000 tokens per minute. Scripts run back to
+    back, so a call can land inside the previous one's window. Wait it out
+    rather than failing the whole run."""
+    for attempt in range(1, attempts + 1):
+        try:
+            return client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=messages,
+                max_tokens=max_tokens,
+                reasoning_effort="low",
+                temperature=temperature,
+            )
+        except Exception as exc:  # noqa: BLE001 - groq raises several types
+            rate_limited = getattr(exc, "status_code", None) in (413, 429) or \
+                "rate_limit" in str(exc).lower()
+            if not rate_limited or attempt == attempts:
+                raise
+            print(f"    Rate limited, waiting 65s (attempt {attempt}/{attempts})…",
+                  flush=True)
+            time.sleep(65)
+
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # ---------------------------------------------------------------------------
@@ -108,6 +131,7 @@ def market_context_text(data: dict) -> str:
 
 EDITIONS = {
     "concise": {
+        "max_tokens": 3500,
         "label":   "CONCISE EDITION",
         "meta":    "2-3 page read",
         "topics":  "Macro · Geopolitics · Earnings",
@@ -137,6 +161,7 @@ EDITIONS = {
         ],
     },
     "standard": {
+        "max_tokens": 4800,
         "label":   "STANDARD EDITION",
         "meta":    "10-minute read",
         "topics":  "Macro · Geopolitics · Earnings · Sectors · Watchlist",
@@ -172,6 +197,7 @@ EDITIONS = {
         ],
     },
     "in-depth": {
+        "max_tokens": 5500,
         "label":   "IN-DEPTH EDITION",
         "meta":    "20-minute read",
         "topics":  "All of the above, plus technicals, options, ratings, week-ahead",
@@ -236,8 +262,17 @@ REQUIRED HTML CONVENTIONS:
 - Sources block:    <div class="sources"><h3>Sources</h3><ul>…</ul></div>
 - H2 section tags must carry matching id attributes, e.g. <h2 id="tldr">
 
-Output ONLY the complete HTML document. No commentary. No markdown fences.
-Start with <!DOCTYPE html> and end with </html>.
+Output ONLY the article itself, in this exact shape and nothing else:
+
+<h1>your sharp, specific headline</h1>
+<h2 id="...">First section</h2>
+... section content ...
+<h2 id="...">Next section</h2>
+... and so on for every required section ...
+
+Do NOT output <!DOCTYPE>, <html>, <head>, <body>, the site header, the nav,
+the table of contents, or the footer. Those are added around your text.
+No commentary. No markdown fences.
 """
 
 
@@ -270,9 +305,15 @@ Write the {edition.upper()} edition of the JDX Daily US Market Briefing for {dat
 REQUIRED SECTIONS (write all of them, in this order):
 {sections_text}
 
-Use this HTML skeleton — fill in every [PLACEHOLDER]:
+Return only the <h1> headline followed by the <h2 id="..."> sections and their
+content, as described in the system prompt. Nothing else.
+"""
 
-<!DOCTYPE html>
+    # The page shell is fixed, so it is built here rather than spent as tokens
+    # on every call. Groq's free tier allows 8,000 tokens per minute, and
+    # having the model retype the header, nav, TOC and footer pushed the
+    # in-depth edition past that ceiling.
+    shell = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -300,7 +341,7 @@ Use this HTML skeleton — fill in every [PLACEHOLDER]:
 <main class="container briefing">
   <div class="briefing-header">
     <div class="eyebrow">{eyebrow}</div>
-    <h1>[WRITE A SHARP, SPECIFIC HEADLINE BASED ON TODAY'S MARKET DATA — no generic phrasing]</h1>
+    <h1>__JDX_HEADLINE__</h1>
     <p class="deck">{spec['deck']}</p>
     <div class="briefing-meta">
       <span>{spec['meta']}</span>
@@ -313,7 +354,7 @@ Use this HTML skeleton — fill in every [PLACEHOLDER]:
   <div class="briefing-body">
     <div class="briefing-content">
 
-[WRITE ALL REQUIRED SECTIONS HERE — each section as <h2 id="..."> ... ]
+__JDX_BODY__
 
     </div>
 
@@ -338,22 +379,38 @@ Use this HTML skeleton — fill in every [PLACEHOLDER]:
 """
 
     print(f"  Calling Groq for {edition}…", flush=True)
-    resp = client.chat.completions.create(
-        model=GROQ_MODEL,
+    resp = call_with_retry(
+        client,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user",   "content": user_msg},
         ],
-        max_tokens=12000,
-        reasoning_effort="low",
+        max_tokens=spec["max_tokens"],
         temperature=0.35,
     )
+
+    if resp.choices[0].finish_reason == "length":
+        raise RuntimeError(
+            f"The {edition} edition hit the {spec['max_tokens']}-token ceiling and "
+            f"came back truncated. Shorten the section list for this edition or "
+            f"raise max_tokens (watch the 8,000 tokens-per-minute free-tier cap)."
+        )
+
     content = resp.choices[0].message.content.strip()
     # Strip any accidental markdown fences the model may add
     content = re.sub(r"^```html\s*", "", content, flags=re.IGNORECASE)
     content = re.sub(r"^```\s*",     "", content)
     content = re.sub(r"\s*```$",     "", content)
-    return content
+
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", content, re.S | re.I)
+    if not m:
+        raise RuntimeError(f"No <h1> in the {edition} response — cannot build the page.")
+    headline = m.group(1).strip()
+    body = content[m.end():].strip()
+    if "<h2" not in body.lower():
+        raise RuntimeError(f"No <h2> sections in the {edition} response.")
+
+    return shell.replace("__JDX_HEADLINE__", headline).replace("__JDX_BODY__", body)
 
 
 # ---------------------------------------------------------------------------

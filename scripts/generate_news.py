@@ -25,6 +25,29 @@ from pathlib import Path
 # on 2026-08-16; gpt-oss-120b is the drop-in production replacement.
 GROQ_MODEL = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
 
+def call_with_retry(client, *, messages, max_tokens, temperature, attempts: int = 3, **extra):
+    """Groq's free tier allows 8,000 tokens per minute, and these scripts run
+    back to back. Wait out a rate-limit rejection instead of failing the run."""
+    for attempt in range(1, attempts + 1):
+        try:
+            return client.chat.completions.create(
+                model=GROQ_MODEL,
+                messages=messages,
+                max_tokens=max_tokens,
+                reasoning_effort="low",
+                temperature=temperature,
+                **extra,
+            )
+        except Exception as exc:  # noqa: BLE001 - groq raises several types
+            rate_limited = getattr(exc, "status_code", None) in (413, 429) or \
+                "rate_limit" in str(exc).lower()
+            if not rate_limited or attempt == attempts:
+                raise
+            print(f"    Rate limited, waiting 65s (attempt {attempt}/{attempts})…",
+                  flush=True)
+            time.sleep(65)
+
+
 ROOT = Path(__file__).resolve().parent.parent
 
 NEWS_START = "<!-- JDX_NEWS_START -->"
@@ -185,14 +208,13 @@ def analyse_with_groq(client, headlines: list[dict]) -> list[dict]:
         lines.append(f"   URL: {h['url']}")
 
     print("  Calling Groq for news analysis…", flush=True)
-    resp = client.chat.completions.create(
-        model=GROQ_MODEL,
+    resp = call_with_retry(
+        client,
         messages=[
             {"role": "system", "content": NEWS_SYSTEM},
             {"role": "user",   "content": f"Headlines:\n\n{chr(10).join(lines)}\n\nReturn the JSON now."},
         ],
-        max_tokens=6000,
-        reasoning_effort="low",
+        max_tokens=4000,
         temperature=0.2,
         response_format={"type": "json_object"},
     )
