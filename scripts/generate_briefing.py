@@ -197,7 +197,7 @@ EDITIONS = {
         ],
     },
     "in-depth": {
-        "max_tokens": 5500,
+        "max_tokens": 6500,
         "label":   "IN-DEPTH EDITION",
         "meta":    "20-minute read",
         "topics":  "All of the above, plus technicals, options, ratings, week-ahead",
