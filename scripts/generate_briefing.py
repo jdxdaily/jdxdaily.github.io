@@ -262,6 +262,9 @@ REQUIRED HTML CONVENTIONS:
 - Sources block:    <div class="sources"><h3>Sources</h3><ul>…</ul></div>
 - H2 section tags must carry matching id attributes, e.g. <h2 id="tldr">
 
+Write the headline in sentence case: capitalise the first word and proper
+nouns only. Never write it in all caps.
+
 Output ONLY the article itself, in this exact shape and nothing else:
 
 <h1>your sharp, specific headline</h1>
