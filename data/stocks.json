@@ -1,181 +1,181 @@
 {
-  "generated": "2026-08-15",
-  "generated_display": "15 August 2026",
+  "generated": "2026-09-01",
+  "generated_display": "1 September 2026",
   "stocks": [
     {
       "ticker": "AAPL",
       "name": "Apple",
       "tv_symbol": "NASDAQ:AAPL",
       "sector": "Technology",
-      "summary": "Apple's recent price action shows a modest gain over the past day, but the stock remains down 8.1% over the past month, currently sitting 10% below its 52-week high and 36.5% above its 52-week low. The key thing for investors to watch next is whether the stock can regain momentum and break above its recent trading range. With a YTD gain of 13.2%, Apple's performance is being closely watched by investors."
+      "summary": "Apple slipped 0.9% on the day but remains up 17.2% YTD, trading about 6.8% below its 52\u2011week high and still 40.2% above its low. The recent pullback follows a modest weekly gain, suggesting a short\u2011term correction within a broader uptrend. Watch upcoming earnings guidance and any macro\u2011tech demand signals for direction."
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft",
       "tv_symbol": "NASDAQ:MSFT",
       "sector": "Technology",
-      "summary": "Microsoft's stock has pulled back slightly over the past week, down 0.9%, but remains up 23.5% over the past month, positioning it 8% below its 52-week high and 40.4% above its 52-week low. Investors will be watching for signs of continued growth, particularly given the stock's strong monthly performance. Microsoft's YTD gain of 5.2% is a key indicator of its overall health."
+      "summary": "Microsoft fell 1.2% intraday, yet is up 7.9% YTD and sits roughly 5.6% shy of its 52\u2011week peak, comfortably above its low. Weekly momentum stays positive, driven by cloud revenue trends. Investors should focus on the next earnings release and any updates to its AI strategy."
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA",
       "tv_symbol": "NASDAQ:NVDA",
       "sector": "Technology",
-      "summary": "NVIDIA's stock has seen a slight uptick over the past week, up 0.5%, and remains up 8.6% over the past month, currently sitting 4.4% below its 52-week high and 36.5% above its 52-week low. The key thing for investors to watch next is whether NVIDIA can maintain its momentum, particularly given its strong YTD gain of 19.4%. NVIDIA's recent price action suggests a positive outlook."
+      "summary": "NVIDIA rose 1.5% on the day, maintaining a 10% monthly gain and a 17.1% YTD increase, trading about 6.2% below its 52\u2011week high. The stock is still well above its low, reflecting strong demand for AI chips. Key watch point is the upcoming quarterly results and inventory trends in the data\u2011center segment."
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet",
       "tv_symbol": "NASDAQ:GOOGL",
       "sector": "Communication Services",
-      "summary": "Alphabet's stock has declined slightly over the past week, down 2.4%, and remains down 2.4% over the past month, positioning it 14% below its 52-week high and 74% above its 52-week low. Investors will be watching for signs of a rebound, particularly given the stock's strong YTD gain of 9.9%. Alphabet's recent price action suggests a need for a catalyst to drive growth."
+      "summary": "Alphabet slipped 2.1% today and is down 4.7% for the month, though YTD it\u2019s up 7.8% and sits 15.7% below its 52\u2011week high. The broader decline follows weaker advertising revenue expectations. Investors should monitor the next ad\u2011spend data release and any progress on AI product rollouts."
     },
     {
       "ticker": "AMZN",
       "name": "Amazon",
       "tv_symbol": "NASDAQ:AMZN",
       "sector": "Consumer Discretionary",
-      "summary": "Amazon's stock has pulled back over the past week, down 4.3%, but remains up 5.1% over the past month, currently sitting 7.5% below its 52-week high and 32.1% above its 52-week low. The key thing for investors to watch next is whether Amazon can regain its footing, particularly given its strong YTD gain of 16%. Amazon's recent price action suggests a volatile trading environment."
+      "summary": "Amazon fell 2.5% on the day and is down 4.3% for the month, yet remains 8.5% under its 52\u2011week high and up 30.7% from its low, with a solid 14.7% YTD gain. The dip reflects pressure on e\u2011commerce margins and cloud competition. Look for the upcoming earnings call and any updates on cost\u2011control measures."
     },
     {
       "ticker": "META",
       "name": "Meta Platforms",
       "tv_symbol": "NASDAQ:META",
       "sector": "Communication Services",
-      "summary": "Meta Platforms' stock has declined over the past month, down 11.2%, and remains down 9.1% YTD, positioning it 24.6% below its 52-week high and 12.3% above its 52-week low. Investors will be watching for signs of a turnaround, particularly given the stock's poor recent performance. Meta's ability to rebound will be a key indicator of its overall health."
+      "summary": "Meta dropped 1.0% today, still down 11.8% YTD and sitting 26.4% below its 52\u2011week high, though only modestly above its low. Weekly and monthly trends are mildly positive, hinting at a tentative rebound. The key catalyst is the next earnings report and progress on its AI and metaverse initiatives."
     },
     {
       "ticker": "TSLA",
       "name": "Tesla",
       "tv_symbol": "NASDAQ:TSLA",
       "sector": "Consumer Discretionary",
-      "summary": "Tesla's stock has seen a modest gain over the past week, up 4.2%, but remains down 12.5% over the past month, currently sitting 30.1% below its 52-week high and 14.7% above its 52-week low. The key thing for investors to watch next is whether Tesla can sustain its recent momentum, particularly given its poor YTD performance of -21.9%. Tesla's recent price action suggests a high degree of volatility."
+      "summary": "Tesla surged 5.5% on the day, adding to an 18.2% monthly gain despite a 16% YTD decline, now trading 24.9% below its 52\u2011week high but 23.3% above its low. The rally follows strong delivery numbers and optimism around new models. Watch for production updates and any regulatory developments affecting EV incentives."
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom",
       "tv_symbol": "NASDAQ:AVGO",
       "sector": "Technology",
-      "summary": "Broadcom's stock has declined sharply over the past day, down 5.9%, and remains down 8.1% over the past week, positioning it 18.3% below its 52-week high and 36.7% above its 52-week low. Investors will be watching for signs of a rebound, particularly given the stock's strong YTD gain of 13.5%. Broadcom's recent price action suggests a need for a catalyst to drive growth."
+      "summary": "Broadcom edged up 0.4% today, holding a 6.9% YTD rise while sitting 23% below its 52\u2011week high and 26.4% above its low. Weekly momentum remains positive despite a 4.9% monthly dip. Investors should keep an eye on the upcoming earnings and any news on its semiconductor\u2011equipment exposure."
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices",
       "tv_symbol": "NASDAQ:AMD",
       "sector": "Technology",
-      "summary": "Advanced Micro Devices' stock has seen a significant gain over the past week, up 6.4%, and remains up 2.7% over the past month, currently sitting 11.5% below its 52-week high and 240.3% above its 52-week low. The key thing for investors to watch next is whether AMD can maintain its momentum, particularly given its strong YTD gain of 130.2%. AMD's recent price action suggests a highly positive outlook."
+      "summary": "AMD climbed 1.1% on the day, extending a 3.1% weekly gain and a staggering 110.6% YTD rise, though still 19% under its 52\u2011week high and far above its low. The stock\u2019s explosive performance is tied to strong GPU and CPU demand. Key focus is the next earnings release and guidance on product road\u2011maps amid intensifying competition."
     },
     {
       "ticker": "ORCL",
       "name": "Oracle",
       "tv_symbol": "NYSE:ORCL",
       "sector": "Technology",
-      "summary": "Oracle's recent price action shows a significant decline over the past day, down 3.6%, but the stock remains up 21.2% over the past month. Currently sitting 53.6% below its 52-week high and 30.9% above its 52-week low, the key thing for investors to watch next is whether the stock can sustain its monthly momentum. With a YTD decline of 22.3%, Oracle's performance is a mixed bag."
+      "summary": "Oracle has slipped 1.1% today and remains 54.1% below its 52\u2011week high, though it sits 29.7% above its 52\u2011week low, indicating a deep discount. The recent 14.8% one\u2011month gain suggests a modest rebound, but investors should watch cloud\u2011software execution and upcoming earnings for direction."
     },
     {
       "ticker": "CRM",
       "name": "Salesforce",
       "tv_symbol": "NYSE:CRM",
       "sector": "Technology",
-      "summary": "Salesforce's stock price has fallen 2.6% over the past day, but it remains up 13.6% over the past month, indicating a recent upward trend. The stock is currently 25.9% below its 52-week high and 30.7% above its 52-week low, and investors should watch for signs of continued growth. Despite a YTD decline of 22.2%, Salesforce's monthly performance is a positive indicator."
+      "summary": "Salesforce is trading just 2.8% shy of its 52\u2011week peak after a strong 40% month and 23% weekly surge, still 71.6% above its low. Momentum remains bullish, but the next catalyst is its quarterly results and progress on AI\u2011driven product integration."
     },
     {
       "ticker": "JPM",
       "name": "JPMorgan Chase",
       "tv_symbol": "NYSE:JPM",
       "sector": "Financials",
-      "summary": "JPMorgan Chase's stock has been relatively stable, with a minimal decline of 0.1% over the past day, and it remains up 5.7% over the past month. Currently sitting just 0.6% below its 52-week high and 29.5% above its 52-week low, the key thing for investors to watch next is whether the stock can break through to new highs. With a YTD gain of 13.1%, JPMorgan Chase is outperforming many of its peers."
+      "summary": "JPMorgan is marginally below its 52\u2011week high (\u20112.5%) and 27.1% above its low, with flat short\u2011term price action and a 10.9% YTD gain. Investors should focus on net interest margin trends and any guidance on loan growth as rates evolve."
     },
     {
       "ticker": "BAC",
       "name": "Bank of America",
       "tv_symbol": "NYSE:BAC",
       "sector": "Financials",
-      "summary": "Bank of America's stock has risen 0.6% over the past day, contributing to its 4.9% gain over the past month. The stock is currently 0.5% below its 52-week high and 40.4% above its 52-week low, indicating a strong upward trend. Investors should watch for continued momentum, as Bank of America's YTD gain of 16.5% suggests a positive outlook."
+      "summary": "Bank of America sits 4.4% under its 52\u2011week high and 33.3% above its low, with modest daily declines and flat month\u2011to\u2011date performance despite an 11.9% YTD rise. Key watch points are credit quality metrics and the impact of Fed policy on net interest income."
     },
     {
       "ticker": "V",
       "name": "Visa",
       "tv_symbol": "NYSE:V",
       "sector": "Financials",
-      "summary": "Visa's stock price has fallen 0.4% over the past day, and it remains relatively flat over the past month, with a decline of 0.1%. Currently sitting 1.5% below its 52-week high and 23.7% above its 52-week low, the key thing for investors to watch next is whether the stock can regain its upward momentum. With a YTD gain of 5.7%, Visa's performance has been modest."
+      "summary": "Visa is only 1.2% below its 52\u2011week high and 28.9% above its low, after a modest 3.8% monthly gain and a 10.2% YTD rise. The next driver will be transaction volume trends and any shifts in consumer spending patterns."
     },
     {
       "ticker": "MA",
       "name": "Mastercard",
       "tv_symbol": "NYSE:MA",
       "sector": "Financials",
-      "summary": "Mastercard's stock has risen 0.4% over the past day, contributing to its 3.2% gain over the past month. The stock is currently 4.4% below its 52-week high and 20.9% above its 52-week low, indicating a relatively stable trend. Investors should watch for signs of continued growth, as Mastercard's YTD gain of 1.6% is somewhat muted."
+      "summary": "Mastercard trades 1.8% under its 52\u2011week high and 25.2% above its low, with a 2.8% monthly gain and 5.2% YTD increase. Investors should monitor global payment\u2011card adoption rates and any regulatory developments affecting fees."
     },
     {
       "ticker": "NFLX",
       "name": "Netflix",
       "tv_symbol": "NASDAQ:NFLX",
       "sector": "Communication Services",
-      "summary": "Netflix's stock price has been relatively stable, with a minimal decline of 0.1% over the past day, and it remains up 5.1% over the past month. Currently sitting 38.1% below its 52-week high and 15.6% above its 52-week low, the key thing for investors to watch next is whether the stock can sustain its recent momentum. With a YTD decline of 14.1%, Netflix's performance has been lackluster."
+      "summary": "Netflix remains 35.8% below its 52\u2011week peak but 19.9% above its low, having rebounded 13% over the month despite a 10.9% YTD decline. Watch subscriber growth trends and upcoming content slate as the primary near\u2011term catalysts."
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly",
       "tv_symbol": "NYSE:LLY",
       "sector": "Healthcare",
-      "summary": "Eli Lilly's stock has fallen 2.2% over the past day, but it remains up 1.1% over the past month. The stock is currently 4.3% below its 52-week high and 70.8% above its 52-week low, indicating a strong upward trend over the longer term. Investors should watch for signs of continued growth, as Eli Lilly's YTD gain of 9.8% suggests a positive outlook."
+      "summary": "Eli Lilly is 9.7% under its 52\u2011week high and 62.9% above its low, with a muted 0.8% monthly move and a 7.6% YTD gain after a 1.5% daily drop. The key focus is its pipeline progress and pricing dynamics for its diabetes/obesity drugs."
     },
     {
       "ticker": "UNH",
       "name": "UnitedHealth",
       "tv_symbol": "NYSE:UNH",
       "sector": "Healthcare",
-      "summary": "UnitedHealth's stock price has risen 0.7% over the past day, but it remains down 5.1% over the past month. The stock is currently 7.9% below its 52-week high and 56.0% above its 52-week low, indicating a recent decline. Investors should watch for signs of a rebound, as UnitedHealth's YTD gain of 21.0% suggests a strong underlying trend."
+      "summary": "UnitedHealth sits 10.8% below its 52\u2011week high and 51.2% above its low, down 6% over the month but up 17.3% YTD, reflecting recent weakness. Investors should watch enrollment trends and cost\u2011inflation pressures in its Medicare Advantage business."
     },
     {
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
       "tv_symbol": "NYSE:JNJ",
       "sector": "Healthcare",
-      "summary": "Johnson & Johnson's recent price action shows a moderate gain over the past month, with the stock currently sitting 2.6% below its 52-week high and 52.1% above its 52-week low. The key thing for an investor to watch next is whether the stock can break through its recent resistance level and continue its upward trend. With a YTD gain of 27.0%, Johnson & Johnson remains a strong performer in the healthcare sector."
+      "summary": "Johnson & Johnson has slipped 0.8% today and is down 2.2% over the week, trading $265.85, roughly 2.7% below its 52\u2011week high and still 56.1% above its 52\u2011week low. The stock\u2019s modest 4.2% monthly gain and strong 30.3% YTD performance suggest resilience, but investors should watch upcoming earnings guidance for any shift in its pharma pipeline outlook."
     },
     {
       "ticker": "WMT",
       "name": "Walmart",
       "tv_symbol": "NYSE:WMT",
       "sector": "Consumer Staples",
-      "summary": "Walmart's stock has experienced a slight uptick over the past week, but remains 14.1% below its 52-week high, and the key thing for an investor to watch next is how the company's sales and earnings reports impact its stock price. The stock is currently trading at $115.27, with a YTD gain of 2.6%, and is 20.7% above its 52-week low. Walmart's performance will be closely tied to the overall consumer staples sector."
+      "summary": "Walmart is up 1.7% on the day at $104.87 but remains 21.7% below its 52\u2011week peak and only 8.1% above its 52\u2011week trough, with a 5.5% monthly decline and a 6.4% YTD drop. The recent pullback reflects soft consumer spending, so the key watch is the retailer\u2019s same\u2011store sales trend and any forward\u2011looking guidance on margin pressure."
     },
     {
       "ticker": "COST",
       "name": "Costco",
       "tv_symbol": "NASDAQ:COST",
       "sector": "Consumer Staples",
-      "summary": "Costco's recent price action shows a steady increase, with the stock currently sitting 12.0% below its 52-week high and 13.6% above its 52-week low. The key thing for an investor to watch next is whether the company can maintain its sales momentum and continue to drive growth. With a YTD gain of 13.0%, Costco remains a strong performer in the consumer staples sector."
+      "summary": "Costco traded at $943.89, down 0.2% intraday and sitting 13.6% under its 52\u2011week high while 11.5% above its low, with a modest 0.8% monthly dip and a 10.9% YTD rise. Investors should focus on membership renewal rates and any signs of slowing discretionary spending as the next catalyst."
     },
     {
       "ticker": "HD",
       "name": "Home Depot",
       "tv_symbol": "NYSE:HD",
       "sector": "Consumer Discretionary",
-      "summary": "Home Depot's stock has experienced a decline over the past week, with the stock currently sitting 18.3% below its 52-week high and 14.8% above its 52-week low. The key thing for an investor to watch next is how the company's upcoming earnings report impacts its stock price, as the stock has struggled to gain traction in recent months. Home Depot's YTD loss of 0.6% lags behind the broader market."
+      "summary": "Home Depot fell 0.7% to $327.83, now 21.0% below its 52\u2011week high and 11.0% above its low, with a 1.2% monthly decline and a 3.9% YTD loss. The next inflection point will be the company\u2019s housing\u2011market exposure and its upcoming quarterly results on builder demand."
     },
     {
       "ticker": "XOM",
       "name": "Exxon Mobil",
       "tv_symbol": "NYSE:XOM",
       "sector": "Energy",
-      "summary": "Exxon Mobil's recent price action shows a significant gain over the past month, with the stock currently sitting 6.0% below its 52-week high and 53.7% above its 52-week low. The key thing for an investor to watch next is whether the company can maintain its momentum and continue to benefit from rising energy prices. With a YTD gain of 32.3%, Exxon Mobil is one of the top performers in the energy sector."
+      "summary": "Exxon Mobil rose 2.7% to $160.95, trading just 4.9% shy of its 52\u2011week high and 51.6% above its low, with a 4.2% monthly gain and a robust 33.9% YTD increase. Watch crude\u2011price trends and the firm\u2019s capital\u2011allocation plan, especially dividend sustainability, for forward direction."
     },
     {
       "ticker": "KO",
       "name": "Coca-Cola",
       "tv_symbol": "NYSE:KO",
       "sector": "Consumer Staples",
-      "summary": "Coca-Cola's stock has experienced a steady increase over the past month, with the stock currently sitting 1.5% below its 52-week high and 36.3% above its 52-week low. The key thing for an investor to watch next is whether the company can continue to drive growth and maintain its market share. With a YTD gain of 28.6%, Coca-Cola remains a strong performer in the consumer staples sector."
+      "summary": "Coca\u2011Cola slipped 1.1% to $88.67, now 3.6% below its 52\u2011week high and 37.8% above its low, with a modest 1.2% monthly rise and a 30.0% YTD gain. The key metric to monitor is global volume growth and pricing power amid inflationary pressures."
     },
     {
       "ticker": "DIS",
       "name": "Walt Disney",
       "tv_symbol": "NYSE:DIS",
       "sector": "Communication Services",
-      "summary": "Walt Disney's recent price action shows a significant gain over the past month, with the stock currently sitting 8.8% below its 52-week high and 16.5% above its 52-week low. The key thing for an investor to watch next is how the company's upcoming earnings report impacts its stock price, as the stock has struggled to gain traction in recent months. Disney's YTD loss of 3.7% lags behind the broader market."
+      "summary": "Disney is down 0.5% at $107.55, 8.2% under its 52\u2011week high and 17.3% above its low, after an 11.8% monthly rally but a 3.1% YTD decline. Investors should keep an eye on streaming subscriber trends and the rollout of its new park attractions as the next driver."
     }
   ]
 }
