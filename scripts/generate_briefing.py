@@ -14,6 +14,10 @@ from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 
+# Groq model. llama-3.3-70b-versatile was retired from the free/dev tier
+# on 2026-08-16; gpt-oss-120b is the drop-in production replacement.
+GROQ_MODEL = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # ---------------------------------------------------------------------------
@@ -335,12 +339,13 @@ Use this HTML skeleton — fill in every [PLACEHOLDER]:
 
     print(f"  Calling Groq for {edition}…", flush=True)
     resp = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=GROQ_MODEL,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user",   "content": user_msg},
         ],
-        max_tokens=8000,
+        max_tokens=12000,
+        reasoning_effort="low",
         temperature=0.35,
     )
     content = resp.choices[0].message.content.strip()

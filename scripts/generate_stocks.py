@@ -17,6 +17,10 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+# Groq model. llama-3.3-70b-versatile was retired from the free/dev tier
+# on 2026-08-16; gpt-oss-120b is the drop-in production replacement.
+GROQ_MODEL = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # ticker, display name, TradingView symbol, sector
@@ -127,12 +131,13 @@ def analyse_batch(client, batch: list) -> dict:
 
     user_msg = "Stocks:\n" + "\n".join(lines) + "\n\nReturn the JSON now."
     resp = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=GROQ_MODEL,
         messages=[
             {"role": "system", "content": STOCK_SYSTEM},
             {"role": "user",   "content": user_msg},
         ],
-        max_tokens=2200,
+        max_tokens=5000,
+        reasoning_effort="low",
         temperature=0.3,
         response_format={"type": "json_object"},
     )

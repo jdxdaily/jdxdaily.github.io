@@ -21,6 +21,10 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+# Groq model. llama-3.3-70b-versatile was retired from the free/dev tier
+# on 2026-08-16; gpt-oss-120b is the drop-in production replacement.
+GROQ_MODEL = os.environ.get("GROQ_MODEL") or "openai/gpt-oss-120b"
+
 ROOT = Path(__file__).resolve().parent.parent
 
 NEWS_START = "<!-- JDX_NEWS_START -->"
@@ -182,12 +186,13 @@ def analyse_with_groq(client, headlines: list[dict]) -> list[dict]:
 
     print("  Calling Groq for news analysis…", flush=True)
     resp = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=GROQ_MODEL,
         messages=[
             {"role": "system", "content": NEWS_SYSTEM},
             {"role": "user",   "content": f"Headlines:\n\n{chr(10).join(lines)}\n\nReturn the JSON now."},
         ],
-        max_tokens=3000,
+        max_tokens=6000,
+        reasoning_effort="low",
         temperature=0.2,
         response_format={"type": "json_object"},
     )
