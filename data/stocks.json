@@ -1,181 +1,181 @@
 {
-  "generated": "2026-09-03",
-  "generated_display": "3 September 2026",
+  "generated": "2026-09-04",
+  "generated_display": "4 September 2026",
   "stocks": [
     {
       "ticker": "AAPL",
       "name": "Apple",
       "tv_symbol": "NASDAQ:AAPL",
       "sector": "Technology",
-      "summary": "Apple\u2019s stock is up 5.1% month\u2011to\u2011date and 20.2% YTD but still sits 4.4% below its 52\u2011week high, leaving modest upside to the peak. The recent 0.1% dip on the day follows a short\u2011term pullback after a strong weekly rally. Watch for earnings guidance and any macro\u2011tech demand shifts as the next catalyst."
+      "summary": "Price and performance data are unavailable, so recent price action and 52\u2011week positioning cannot be assessed; investors should await updated figures before forming a view."
     },
     {
       "ticker": "MSFT",
       "name": "Microsoft",
       "tv_symbol": "NASDAQ:MSFT",
       "sector": "Technology",
-      "summary": "Microsoft is marginally down 0.8% today, trading 7.6% under its 52\u2011week high while remaining 41.1% above its low, reflecting a relatively flat near\u2011term trend. The modest 1\u2011week gain of 0.1% suggests limited momentum. Investors should focus on cloud revenue trends and upcoming product announcements for direction."
+      "summary": "Price and performance data are unavailable, preventing analysis of recent moves or 52\u2011week range; watch for refreshed metrics."
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA",
       "tv_symbol": "NASDAQ:NVDA",
       "sector": "Technology",
-      "summary": "NVIDIA posted a 3.2% daily gain, keeping it 4.7% shy of its 52\u2011week high after a solid 7% weekly rise. The stock remains 36% above its low, indicating strong upside potential if the AI\u2011driven rally sustains. Key watch: next earnings beat and AI spend trends across data\u2011center customers."
+      "summary": "Price and performance data are unavailable, so no insight into current price action or range can be provided; updated numbers are needed."
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet",
       "tv_symbol": "NASDAQ:GOOGL",
       "sector": "Communication Services",
-      "summary": "Alphabet is up 0.6% on the day but down 16.2% from its 52\u2011week peak, with a 10.7% monthly decline tempering its 7.1% YTD gain. The pullback follows weaker ad\u2011spend data and heightened competition. Investors should monitor ad\u2011revenue recovery and AI\u2011related product rollout for next moves."
+      "summary": "Price and performance data are unavailable, limiting any assessment of recent trends or 52\u2011week context; await new data."
     },
     {
       "ticker": "AMZN",
       "name": "Amazon",
       "tv_symbol": "NASDAQ:AMZN",
       "sector": "Consumer Discretionary",
-      "summary": "Amazon is flat today, still 10.2% below its 52\u2011week high after an 8.1% monthly slide, though YTD performance remains positive at 12.6%. The recent 2% weekly decline points to pressure on retail and cloud segments. Watch for Q3 earnings and any updates on cost\u2011control measures or new growth initiatives."
+      "summary": "Price and performance data are unavailable, making it impossible to gauge recent action or range; monitor for updated information."
     },
     {
       "ticker": "META",
       "name": "Meta Platforms",
       "tv_symbol": "NASDAQ:META",
       "sector": "Communication Services",
-      "summary": "Meta rose 2.5% intraday, trading 23.8% under its 52\u2011week high after a modest 0.8% monthly gain but a -8.7% YTD performance. The stock\u2019s proximity to its low (only 12.9% above) suggests limited upside unless earnings improve. Key focus: user growth metrics and monetization of AI features ahead of the next earnings report."
+      "summary": "Price and performance data are unavailable, so current positioning cannot be evaluated; await refreshed stats."
     },
     {
       "ticker": "TSLA",
       "name": "Tesla",
       "tv_symbol": "NASDAQ:TSLA",
       "sector": "Consumer Discretionary",
-      "summary": "Tesla ticked up 0.3% and remains 27.1% below its 52\u2011week high, though it\u2019s 19.7% above its low after a 9.1% monthly rise. The modest weekly gain hints at a tentative rebound after a steep YTD decline. Investors should watch production updates and demand trends, especially in China, for the next catalyst."
+      "summary": "Price and performance data are unavailable, hindering analysis of recent price action or 52\u2011week range; look for updated figures."
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom",
       "tv_symbol": "NASDAQ:AVGO",
       "sector": "Technology",
-      "summary": "Broadcom slipped 0.7% and sits 23.6% under its 52\u2011week high after a 12.2% monthly drop, despite a 6% YTD gain. The recent 3.3% weekly rise may be a short\u2011term bounce. Focus on the upcoming earnings and any guidance on its semiconductor and infrastructure segments."
+      "summary": "Price and performance data are unavailable, preventing assessment of recent moves or range; await new data."
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices",
       "tv_symbol": "NASDAQ:AMD",
       "sector": "Technology",
-      "summary": "AMD fell 0.6% today, still 21.3% below its 52\u2011week high but dramatically 202.4% above its low after a 104.5% YTD surge. The 5% weekly decline follows a strong rally, raising questions about valuation sustainability. Watch for the next earnings beat and GPU/CPU market share trends as the next inflection point."
+      "summary": "Price and performance data are unavailable, so recent price action and 52\u2011week context cannot be determined; watch for updated numbers."
     },
     {
       "ticker": "ORCL",
       "name": "Oracle",
       "tv_symbol": "NYSE:ORCL",
       "sector": "Technology",
-      "summary": "Oracle is trading $145.75, still 55% below its 52\u2011week high and 27% above its low, reflecting a steep YTD decline of 24.8%. The stock\u2019s modest 1\u2011day gain and flat 1\u2011month performance suggest it is stuck near the bottom of its range; investors should watch any earnings guidance or cloud\u2011software margin trends for a catalyst."
+      "summary": "Price and performance data are currently unavailable, making it impossible to assess Oracle's position relative to its 52\u2011week range. Investors should wait for updated pricing information before forming a view."
     },
     {
       "ticker": "CRM",
       "name": "Salesforce",
       "tv_symbol": "NYSE:CRM",
       "sector": "Technology",
-      "summary": "Salesforce sits at $256.93, just 3% shy of its 52\u2011week peak after a strong 34.5% month and 25% weekly surge, though still 71% above its low. The recent pullback of 0.5% may be a profit\u2011taking pause \u2013 the next driver will be its upcoming quarterly results and progress on AI\u2011driven CRM offerings."
+      "summary": "With no price or percentage changes provided, Salesforce's recent price action cannot be evaluated. Monitoring forthcoming data releases will be essential for any assessment."
     },
     {
       "ticker": "JPM",
       "name": "JPMorgan Chase",
       "tv_symbol": "NYSE:JPM",
       "sector": "Financials",
-      "summary": "JPMorgan Chase trades at $356.22, 2.5% below its 52\u2011week high and 27% above its low, with modest daily upside and flat YTD performance. Focus should be on net interest margin trends and any shifts in loan\u2011loss provisions as the bank navigates a higher\u2011rate environment."
+      "summary": "JPMorgan Chase lacks current pricing metrics, so its standing in the 52\u2011week range is unclear. Investors should watch for updated market quotes before drawing conclusions."
     },
     {
       "ticker": "BAC",
       "name": "Bank of America",
       "tv_symbol": "NYSE:BAC",
       "sector": "Financials",
-      "summary": "Bank of America is at $62.60, 3.4% under its 52\u2011week high and 34.7% above its low, posting modest gains across daily and weekly frames. Investors should monitor deposit growth and credit quality metrics, especially as rate cycles evolve."
+      "summary": "Bank of America\u2019s price details are missing, preventing analysis of its recent moves or range positioning. Awaiting refreshed data is advisable."
     },
     {
       "ticker": "V",
       "name": "Visa",
       "tv_symbol": "NYSE:V",
       "sector": "Financials",
-      "summary": "Visa trades $378.40, just 1.5% below its 52\u2011week high and 28.5% above its low, with a solid YTD gain of 9.9% despite recent short\u2011term weakness. Key watch points are transaction volume trends and any pricing pressure from competing payment networks."
+      "summary": "Visa\u2019s price and performance figures are not available, so its current range status cannot be determined. Keep an eye on upcoming price updates."
     },
     {
       "ticker": "MA",
       "name": "Mastercard",
       "tv_symbol": "NYSE:MA",
       "sector": "Financials",
-      "summary": "Mastercard is priced at $588.14, 2% under its 52\u2011week high and 24.9% above its low, delivering a modest 5% YTD rise. The next catalyst will be global consumer spend data and the impact of new fee structures on margins."
+      "summary": "Mastercard\u2019s data is absent, leaving its recent price action and 52\u2011week context unknown. Updated pricing will be needed for any meaningful take."
     },
     {
       "ticker": "NFLX",
       "name": "Netflix",
       "tv_symbol": "NASDAQ:NFLX",
       "sector": "Communication Services",
-      "summary": "Netflix sits at $82.73, 34.5% below its 52\u2011week high but 22.4% above its low, with a 12.5% monthly rally despite a 9.1% YTD decline. Watch subscriber growth and content spend guidance for direction ahead of the next earnings release."
+      "summary": "Netflix has no reported price or change data, so its recent performance and range placement cannot be assessed. Investors should monitor for new information."
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly",
       "tv_symbol": "NYSE:LLY",
       "sector": "Healthcare",
-      "summary": "Eli Lilly trades $1,160.08, 9.4% under its 52\u2011week high and 63.4% above its low, posting a 7.9% YTD gain and modest weekly dip. The key focus is upcoming FDA decisions and pipeline updates, particularly for its diabetes and obesity franchises."
+      "summary": "Eli Lilly\u2019s price information is missing, making it impossible to gauge its recent movement or 52\u2011week position. Await updated figures before evaluating."
     },
     {
       "ticker": "UNH",
       "name": "UnitedHealth",
       "tv_symbol": "NYSE:UNH",
       "sector": "Healthcare",
-      "summary": "UnitedHealth is at $399.66, 8.4% below its 52\u2011week high and 55.2% above its low, delivering a strong 20.4% YTD rise. Investors should keep an eye on Medicare Advantage enrollment trends and any regulatory developments affecting its cost structure."
+      "summary": "UnitedHealth lacks current pricing data, so its recent price action and range status are indeterminate. Watch for refreshed market data."
     },
     {
       "ticker": "JNJ",
       "name": "Johnson & Johnson",
       "tv_symbol": "NYSE:JNJ",
       "sector": "Healthcare",
-      "summary": "Johnson & Johnson is trading at $275.21, essentially flat at its 52\u2011week high and still 61.6% above its 52\u2011week low, with strong YTD gains of 34.9%. Recent daily and weekly upside suggests momentum is holding, but the stock is near its peak range. Watch for any earnings guidance or FDA news that could break the high."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Johnson & Johnson's position relative to its 52\u2011week range."
     },
     {
       "ticker": "WMT",
       "name": "Walmart",
       "tv_symbol": "NYSE:WMT",
       "sector": "Consumer Staples",
-      "summary": "Walmart sits at $106.09, 20.8% below its 52\u2011week high but 7.6% above its low, with modest daily and weekly gains but a 4.7% drop over the month and a 5.3% YTD decline. The stock is under pressure in a soft consumer environment. Key focus will be same\u2011store sales trends and any updates to its low\u2011price strategy."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Walmart's position relative to its 52\u2011week range."
     },
     {
       "ticker": "COST",
       "name": "Costco",
       "tv_symbol": "NASDAQ:COST",
       "sector": "Consumer Staples",
-      "summary": "Costco trades at $928.48, down 15.0% from its 52\u2011week high yet 9.7% above its low, posting modest declines across daily, weekly and monthly frames but a solid 9.1% YTD rise. The pullback may present a buying opportunity if membership renewal trends stay strong. Watch upcoming earnings for guidance on inventory and margin pressure."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Costco's position relative to its 52\u2011week range."
     },
     {
       "ticker": "HD",
       "name": "Home Depot",
       "tv_symbol": "NYSE:HD",
       "sector": "Consumer Discretionary",
-      "summary": "Home Depot is at $318.51, 23.2% off its 52\u2011week high and 7.9% above its low, with negative momentum across daily, weekly and monthly periods and a 6.6% YTD drop. The stock is testing lower\u2011range support amid a weaker housing market. Investor attention should focus on housing starts data and any shifts in DIY spending."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Home Depot's position relative to its 52\u2011week range."
     },
     {
       "ticker": "XOM",
       "name": "Exxon Mobil",
       "tv_symbol": "NYSE:XOM",
       "sector": "Energy",
-      "summary": "Exxon Mobil sits at $164.15, just 3.0% shy of its 52\u2011week high and 54.6% above its low, posting solid YTD growth of 36.5% and a 7.3% monthly gain. The near\u2011high price reflects strong energy demand and price recovery. Watch crude price trends and OPEC output decisions for the next move."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Exxon Mobil's position relative to its 52\u2011week range."
     },
     {
       "ticker": "KO",
       "name": "Coca-Cola",
       "tv_symbol": "NYSE:KO",
       "sector": "Consumer Staples",
-      "summary": "Coca\u2011Cola is trading at $88.24, 4.1% below its 52\u2011week high and 37.1% above its low, with a 29.4% YTD rise and modest daily gains. The stock remains near its upper range after steady earnings. Key watch point is global volume growth and pricing strategy amid inflation pressures."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Coca\u2011Cola's position relative to its 52\u2011week range."
     },
     {
       "ticker": "DIS",
       "name": "Walt Disney",
       "tv_symbol": "NYSE:DIS",
       "sector": "Communication Services",
-      "summary": "Disney trades at $107.98, 7.8% below its 52\u2011week high and 17.7% above its low, with a 10.0% monthly rise but a slight YTD decline of 2.7%. Recent upside follows streaming and park recovery, yet the stock is still below its peak. Investors should monitor subscriber growth and park attendance ahead of earnings."
+      "summary": "Price and performance data are unavailable, preventing a current assessment of Walt Disney's position relative to its 52\u2011week range."
     }
   ]
 }
